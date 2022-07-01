@@ -1,0 +1,16 @@
+footer.footer{
+    background: linear-gradient(275.92deg, #46327B 12.34%, #000000 122.99%);
+    text-align: center;
+    padding: 30px 0;
+}
+footer a{
+    color: white;
+    text-decoration: none;
+}
+.bottomMenu a{
+    color: white;
+}
+.bottomMenu ul{
+    list-style: none;
+    text-align: center;
+}

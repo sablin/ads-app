@@ -1,0 +1,15 @@
+.topLine{
+    background: #af7bbd;
+    padding: 20px 0;
+   }
+   .topButtons{
+       display: flex;
+       justify-content: center;
+       align-items: center;
+   
+   }
+   .topButtons a{
+       color: white;
+       margin: 0 20px;
+       text-decoration: none;
+   }

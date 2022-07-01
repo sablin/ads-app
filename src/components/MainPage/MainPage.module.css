@@ -1,0 +1,88 @@
+.mainPage{
+    width: 100%;
+    background: url('../../assets/main-bg.png');
+    color: white;
+}
+.headerWrapper{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+.mainPage h2{
+    font-size: 35px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+.bgenter{
+    background: url('../../assets/enter-bg.png') center no-repeat;
+}
+.benefits{
+    background: linear-gradient(275.92deg, #46327B 12.34%, rgba(201, 0, 112, 0.87) 122.99%);
+}
+.enterButton{
+    font-size: 16px;
+    color: white;
+    border: 2px solid #0B8F00;
+    padding: 15px 45px;
+    background: transparent;
+}
+.infoWrapper{
+    max-width: 100%;
+    width: 700px;
+    padding: 30px 50px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+.infoWrapper hr{
+    margin: 17px auto;
+    width: 100%;
+}
+.buttonsBlock{
+    display: flex;
+    justify-content: left;
+    margin-top: 20px;
+}
+.icons{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.icons span{
+    width: 200px;
+    margin: 30px 30px;
+    text-align: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+}
+.icons span:not(:last-child)::after  {
+    background: url('../../assets/arrows.png') no-repeat;
+    content: '';
+    width: 100px;
+    position: absolute;
+    height: 37px;
+    top: 26%;
+    right: -104px;
+  }
+.icons i{
+    display: block;
+    font-size: 42px;
+    margin-bottom: 17px;
+}
+
+
+@media (max-width:900px) {
+    .icons{
+        display: none;
+    }
+    .infoWrapper{
+        width: 100%;
+        height: auto;
+    }
+}

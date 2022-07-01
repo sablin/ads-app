@@ -1,0 +1,12 @@
+.prizeBox{
+    width: 200px;
+    text-align: center;
+    margin: 10px;
+}
+.prizeBox img{
+    max-width: 100%;
+}
+.prizeContainer{
+    display: flex;
+    flex-wrap: wrap;
+}

@@ -1,0 +1,22 @@
+.mainContainer{
+
+    height: 100vh;
+}
+.userCart{
+    padding: 24px 40px;
+    background: #7892ab;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 300px;
+}
+.userCart strong{
+    border: 1px dashed white;
+    margin-left: 10px;
+    padding: 1px 5px;
+}
+.userCart h3{
+    text-decoration: underline;
+    margin-bottom: 8px;
+}
