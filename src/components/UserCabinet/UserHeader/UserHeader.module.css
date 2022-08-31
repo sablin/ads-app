@@ -12,6 +12,9 @@
        margin: 0 20px;
        text-decoration: none;
    }
+   .menuButton{
+    display: none;
+}
    .loginBlock{
        display: flex;
        flex-direction: column;
@@ -28,3 +31,55 @@
        display: flex;
        align-items: center;
    }
+   .mobileMenu{
+    position: absolute;
+    background: linear-gradient(275.92deg, #72327b 12.34%, rgba(201, 0, 112, 0.87) 122.99%);
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    bottom: 0;
+    top: 0;
+    z-index: 9;
+    left: 0;
+    padding: 25px 5px;
+   }
+   .loginBlockMenu{
+       color: white;
+       padding: 15px;
+   }
+   .mobileClose{
+    position: absolute;
+    right: 20px;
+    font-size: 27px;
+    top: 0;
+   }
+
+   @media (max-width:900px) {
+  
+       .topMenu{
+        display: flex;
+        flex-direction: column;
+        line-height: 18px;
+       }
+       .topMenu a{
+           margin-bottom: 7px;
+       }
+       .loginBlock{
+        display: none;
+ 
+       }
+       .loginBlock a{
+           display: none;
+       }
+       .topMenu{
+           display: none;
+       }
+       .menuButton{
+           display: block;
+           font-size: 25px;
+       }
+
+
+
+   }
+  

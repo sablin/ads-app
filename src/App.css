@@ -2,7 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
+
+  font-family: 'Rubik', sans-serif
 }
 input[type=text]{
   padding: 11px 16px;

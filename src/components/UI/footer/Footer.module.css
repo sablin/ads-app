@@ -10,7 +10,33 @@ footer a{
 .bottomMenu a{
     color: white;
 }
+.logo img{
+width: 150px;
+}
+.footerCol{
+    width:30%;
+}
 .bottomMenu ul{
     list-style: none;
     text-align: center;
+}
+.footerContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+button{
+    background: none;
+    color: white;
+    border: none;
+}
+.mailLink{
+    color: #7F679C;
+}
+@media (max-width:900px) {
+    .footerCol{
+        width: 100%;
+        text-align: center;
+        margin: 5px 0;
+    }
 }

@@ -58,10 +58,10 @@ const MainPage = () => {
             <section className={classes.benefits}>
                 <div className="container">
                 <div className={classes.icons}>
-                <span>Регистрируйтесь в сервисе</span>
-                <span>Смотрите рекламные предложения в удобное вам время</span>
-                <span>Копите бонусы за просмотры</span>
-                <span>Получайте подарки или скидки за накопленные бонусы</span>
+                <span className={classes.register}>Регистрируйтесь в сервисе</span>
+                <span className={classes.watch}>Смотрите рекламные предложения в удобное вам время</span>
+                <span className={classes.collect}>Копите бонусы за просмотры</span>
+                <span className={classes.getPrice}>Получайте подарки или скидки за накопленные бонусы</span>
             </div>
                 </div>
             </section>

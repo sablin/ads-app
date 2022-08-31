@@ -1,3 +1,4 @@
 .userCabinet{
-    background: linear-gradient(275.92deg, #46327B 12.34%, rgba(201, 0, 112, 0.87) 122.99%);
+    background: url(../../assets/lk-bg.jpg);
+    background-size: cover;
 }

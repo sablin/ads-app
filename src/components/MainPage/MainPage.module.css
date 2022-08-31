@@ -14,11 +14,9 @@
     font-weight: bold;
     margin-bottom: 30px;
 }
-.bgenter{
-    background: url('../../assets/enter-bg.png') center no-repeat;
-}
+
 .benefits{
-    background: linear-gradient(275.92deg, #46327B 12.34%, rgba(201, 0, 112, 0.87) 122.99%);
+    background: linear-gradient(275.92deg, #72327b 12.34%, rgba(201, 0, 112, 0.87) 122.99%);
 }
 .enterButton{
     font-size: 16px;
@@ -26,6 +24,7 @@
     border: 2px solid #0B8F00;
     padding: 15px 45px;
     background: transparent;
+    border-radius: 12px;
 }
 .infoWrapper{
     max-width: 100%;
@@ -36,10 +35,24 @@
     flex-direction: column;
     justify-content: left;
 }
-
+.logo img{
+    width:150px;
+}
 .infoWrapper hr{
     margin: 17px auto;
     width: 100%;
+}
+.register{
+    background: url('../../assets/bi_pencil.png') center no-repeat;
+}
+.watch{
+    background: url('../../assets/cil_clock.png') center no-repeat;
+}
+.collect{
+    background: url('../../assets/clarity_wallet-line.png') center no-repeat;
+}
+.getPrice{
+    background: url('../../assets/simple-line-icons_present.png') center no-repeat;
 }
 .buttonsBlock{
     display: flex;
@@ -54,6 +67,7 @@
 }
 .icons span{
     width: 200px;
+    height: 200px;
     margin: 30px 30px;
     text-align: center;
     position: relative;
@@ -67,7 +81,7 @@
     width: 100px;
     position: absolute;
     height: 37px;
-    top: 26%;
+    top: 40%;
     right: -104px;
   }
 .icons i{
@@ -84,5 +98,10 @@
     .infoWrapper{
         width: 100%;
         height: auto;
+        text-align: center;
     }
+    .buttonsBlock{
+    
+    justify-content: center;
+}
 }
