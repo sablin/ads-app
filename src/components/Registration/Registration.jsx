@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import cl from './Registration.module.css';
-import axios from 'axios';
-import InputMask from 'react-input-mask';
-import SERV from '../../constants/server';
+import UserApi from "../../api/user.api";
 
 const Registration = () => {
   const [user, setUser] = useState({
@@ -32,8 +30,7 @@ const Registration = () => {
   const register = (e) => {
     e.preventDefault();
 
-    const response = axios
-      .post(`${SERV}/user/`, user)
+    UserApi.signUp(user)
       .then((res) => {
         setVisible(false);
         setSuccess(true);

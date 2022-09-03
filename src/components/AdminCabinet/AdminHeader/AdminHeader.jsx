@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../context';
 
 import cl from './AdminHeader.module.css';
+import TokenService from "../../../services/token.service";
 
 const AdminHeader = () => {
 
@@ -10,6 +11,7 @@ const AdminHeader = () => {
 
     const logout = () =>{
 
+        TokenService.clearLocalTokens()
         localStorage.removeItem('auth');
         localStorage.removeItem('user');
         localStorage.removeItem('loginUser');

@@ -6,6 +6,7 @@ import userIcon from '../../../assets/icon.png'
 
 
 import cl from './UserHeader.module.css';
+import TokenService from "../../../services/token.service";
 
 const UserHeader = (props) => {
 
@@ -14,6 +15,7 @@ const UserHeader = (props) => {
 
     const logout = () =>{
 
+        TokenService.clearLocalTokens()
         localStorage.removeItem('auth');
         localStorage.removeItem('loginUser');
         localStorage.removeItem('token');
@@ -29,13 +31,13 @@ const UserHeader = (props) => {
             <Link to="/lk/gifts">Выбор призов</Link> 
             <Link to="/lk/mygifts">Мои призы</Link> 
                 </div>
-                <button className={cl.menuButton} onClick={()=>setOpen(!open)}><i class="fa fa-bars" aria-hidden="true"></i>
+                <button className={cl.menuButton} onClick={()=>setOpen(!open)}><i className="fa fa-bars" aria-hidden="true"></i>
 </button>
                 {
                     open ?
                         (
                             <div className={cl.mobileMenu}>
-                                <button className={cl.mobileClose}  onClick={()=>setOpen(!open)}><i class="fa fa-times" aria-hidden="true"></i>
+                                <button className={cl.mobileClose}  onClick={()=>setOpen(!open)}><i className="fa fa-times" aria-hidden="true"></i>
 </button>
                             <Link to="/lk">Главная страница</Link>
                         <Link to="/lk/gifts">Выбор призов</Link> 

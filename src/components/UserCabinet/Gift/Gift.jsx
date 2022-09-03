@@ -6,7 +6,7 @@ import cl from './Gift.module.css'
 const Gift = ({but, name, discr, balance, img, getPrize, id}) => {
     return (
         <div className={cl.gift}>
-            <div class={cl.imageBox}>
+            <div className={cl.imageBox}>
             <img src={img} alt={name} />
             </div>
            
