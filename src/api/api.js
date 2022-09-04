@@ -4,9 +4,7 @@ import SERV from "../constants/server";
 
 const axiosInstance = axios.create({
     baseURL: SERV,
-    headers: {
-        'Content-Type': 'application/json',
-    },
+
 })
 
 axiosInstance.interceptors.request.use((config) => {
