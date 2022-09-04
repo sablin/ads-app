@@ -8,6 +8,7 @@ import UserHeader from '../UserHeader/UserHeader';
 
 import cl from './MyGifts.module.css';
 import UserApi from "../../../api/user.api";
+import PrizeRequestApi from "../../../api/prize-request.api";
 
 const MyGifts = () => {
     const {isAuth, setIsAuth, loginUser, setLoginUser, token, setToken} = useContext(AuthContext);
@@ -15,7 +16,7 @@ const MyGifts = () => {
     const [myPrizes, setMyPrizes] = useState([]);
 
     useEffect(() => {
-        UserApi.userInfo()
+        PrizeRequestApi.getListUserRequests()
             .then((res) => {
                 console.log(res.data);
                 setPrizes(res.data)
