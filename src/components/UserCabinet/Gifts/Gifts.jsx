@@ -9,6 +9,7 @@ import cl from './Gifts.module.css';
 import PrizeApi from "../../../api/prize.api";
 import TokenService from "../../../services/token.service";
 import axios from "axios";
+import PrizeRequestApi from "../../../api/prize-request.api";
 
 const Gifts = () => {
     const {isAuth, setIsAuth, loginUser, setLoginUser, token, setToken} = useContext(AuthContext);
@@ -28,7 +29,7 @@ const Gifts = () => {
             prize: id,
         };
         console.log(data);
-        PrizeApi.getGift(data)
+        PrizeRequestApi.creatingRequestForGift(data)
             .then((res) => {
                 alert('Ваша заявка успешно создана. Ожидайте когда с вами свяжется администратор сервиса.');
             })

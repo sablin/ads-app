@@ -5,7 +5,7 @@ class AdvertisementApi {
 
     async fetch() {
         try {
-            return await api.get(this.#baseUrl)
+            return await api.get(`${this.#baseUrl}/`)
         } catch (e) {
             return e
         }

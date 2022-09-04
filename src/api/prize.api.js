@@ -12,7 +12,7 @@ class PrizeApi {
     }
 
     async informationAboutGiftsById(id) {
-        return await api.get(`${this.#baseUrl}/${id}`)
+        return await api.get(`${this.#baseUrl}/${id}/`)
     }
 }
 
