@@ -3,36 +3,45 @@
     display: inline-block;
     text-align: left;
     margin: 10px 30px 50px 30px;
-    padding: 30px;
     background: #ffffff40;
     max-width: 100%;
+    padding-bottom: 20px;
 }
 .gift img{
     max-width: 150px;
 }
 .gift h2{
     font-weight: 500;
-    font-size: 16px;
-    line-height: 19px;
+    font-size: 19px;
+    line-height: 24px;
+    padding: 5px 0 0px 0;
 }
 .gift p{
     margin-bottom: 0;
 }
 .gift span{
     display: block;
-    padding: 20px 0 0;
     font-weight: 900;
     font-size: 20px;
-    color: #000000;
+    color: white;
     text-align: right;
 }
 .gift button{
     margin: 20px auto 0;
     display: block;
 }
+.prizeInfo{
+    padding: 5px 20px;
+    position: absolute;
+    bottom: 0;
+    color: rgb(28, 27, 27);
+    text-align: left;
+    width: 100%;
+    text-align: left;
+}
 .imageBox{
     width: 100%;
-    height: 185px;
+    height: 300px;
     text-align: center;
     position: relative;
     margin-bottom: 20px;
@@ -40,4 +49,11 @@
 .imageBox img{
     max-width: 100%;
     max-height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
 }
+button.moreButton{
+    flex: 1;
+    margin: 5px auto 0;
+    }

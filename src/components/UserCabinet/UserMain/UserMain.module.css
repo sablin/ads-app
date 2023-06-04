@@ -1,7 +1,9 @@
-.mainContainer {
 
+.noneBanner{
+    max-width: 90%;
+    margin: 0 auto 20px;
+    display: block;
 }
-
 .userCart {
     padding: 24px 40px;
     background: #7892ab;
@@ -17,7 +19,13 @@
     margin-left: 10px;
     padding: 1px 5px;
 }
-
+.imageInfo{
+    text-decoration: none;
+}
+.moreButton{
+flex: 1;
+color: black
+}
 .userCart h3 {
     text-decoration: underline;
     margin-bottom: 8px;
@@ -27,7 +35,7 @@
     width: 100%;
     margin: 0 auto;
     position: relative;
-    max-width: 800px;
+    max-width: 400px;
 }
 
 .imageBox img {
@@ -37,4 +45,11 @@
 #customLegend {
     margin-bottom: 0 !important;
     bottom: 0 !important;
+    display: flex;
+    flex-direction: column;
+    opacity: 0.7!important;
+
+}
+.legend a{
+    color: black!important;
 }

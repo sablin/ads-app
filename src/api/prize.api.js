@@ -4,7 +4,7 @@ class PrizeApi {
     #baseUrl = 'prize'
 
     async fetch() {
-        return await api.get(this.#baseUrl)
+        return await api.get(`${this.#baseUrl}/`)
     }
 
     async getGift(data) {

@@ -1,13 +1,10 @@
 import React, {useContext, useEffect, useState} from 'react';
-import SERV from '../../../constants/server';
 import {AuthContext} from '../../../context';
 import Footer from '../../UI/footer/Footer';
 import CollectGift from '../CollectGift/CollectGift';
-import Gift from '../Gift/Gift';
 import UserHeader from '../UserHeader/UserHeader';
 
 import cl from './MyGifts.module.css';
-import UserApi from "../../../api/user.api";
 import PrizeRequestApi from "../../../api/prize-request.api";
 
 const MyGifts = () => {
@@ -18,7 +15,6 @@ const MyGifts = () => {
     useEffect(() => {
         PrizeRequestApi.getListUserRequests()
             .then((res) => {
-                console.log(res.data);
                 setPrizes(res.data)
             });
     }, []);

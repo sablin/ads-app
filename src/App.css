@@ -6,7 +6,7 @@
     font-family: 'Rubik', sans-serif
 }
 
-input[type=text] {
+input[type=text], input[type=password] {
     padding: 11px 16px;
     width: 300px;
     border: none;
@@ -39,4 +39,7 @@ table {
 
 .carousel.carousel-slider {
     text-align: center;
+}
+.modalAbout{
+    overflow: scroll;
 }

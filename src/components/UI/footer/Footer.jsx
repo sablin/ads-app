@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 import classes from './Footer.module.css'
-import logo from '../../../assets/logo.png'
+import logo from '../../../assets/logo_white.svg'
 import tg from '../../../assets/tg.png'
 import About from '../../About/About';
 import Modal from '../modal/Modal'
 import Ads from '../../Ads/AdsPage'
 import { Link } from 'react-router-dom';
+import policy from '../../../assets/politica.pdf'
 const Footer = () => {
 
     const [aboutModal, setAboutModal] = useState(false)
     const [adsModal, setAdsModal] = useState(false)
+    const clas = 'modalAbout'
 
     return (
         <footer className={classes.footer}>
@@ -27,13 +29,14 @@ const Footer = () => {
                     <ul>
                         <li><button  onClick={() => setAboutModal(true)}>О нас</button></li>
                         <li><button  onClick={() => setAdsModal(true)}>Рекламодателям</button></li>
+                        <li><Link to={policy} download="" target="_blank">Правила обработки персональных данных</Link></li>
                     </ul>
                 </div>
             </div>
-            <Modal visible={aboutModal} setVisible={setAboutModal}> 
+            <Modal visible={aboutModal} setVisible={setAboutModal} > 
                 <About />
             </Modal>
-            <Modal visible={adsModal} setVisible={setAdsModal}> 
+            <Modal visible={adsModal} setVisible={setAdsModal} cla={clas}> 
                 <Ads />
             </Modal>
             <div className={classes.footerCol}>

@@ -15,7 +15,6 @@ const CollectGift = ({id}) => {
     useEffect(() => {
         PrizeApi.informationAboutGiftsById(id)
             .then((res) => {
-                console.log(res.data);
                 setMyPrize(res.data);
             });
     }, []);
@@ -25,11 +24,6 @@ const CollectGift = ({id}) => {
         <div className={cl.gift}>
             <div className={cl.imageBox}>
                 <img src={myPrize.image} alt=""/>
-                <div className={cl.giftInfo}>
-                    <p>{myPrize.title}</p>
-                    <p>{myPrize.description}</p>
-                </div>
-
             </div>
         </div>
     )

@@ -2,6 +2,7 @@
     width: 100%;
     background: url('../../assets/main-bg.png');
     color: white;
+    background-size: cover;
 }
 .headerWrapper{
     display:flex;
@@ -104,4 +105,24 @@
     
     justify-content: center;
 }
+}
+
+@media (max-width:600px) {
+    .icons{
+        display: flex;
+    }
+    .icons span:not(:last-child)::after {
+        content: '';
+        width: 100px;
+        position: absolute;
+        height: 37px;
+        bottom: -64px;
+        left: 26%;
+        transform: rotate(90deg);
+        top: auto
+    }
+    .icons  span {
+        width: 200px;
+        height: 160px;
+    }
 }

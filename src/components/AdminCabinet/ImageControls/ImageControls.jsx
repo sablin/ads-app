@@ -21,7 +21,6 @@ const ImageControls = () => {
         },
       })
       .then((res) => {
-        console.log(res.data);
         setImages(res.data);
       });
   }, []);
@@ -41,7 +40,6 @@ const ImageControls = () => {
             },
           })
           .then((res) => {
-            console.log(res.data);
             setImages(res.data);
           });
       });

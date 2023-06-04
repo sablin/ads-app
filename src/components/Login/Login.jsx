@@ -9,6 +9,7 @@ const Login = () => {
         email: '',
         password: '',
     });
+    const [pass, setPass] = useState(false);
 
     const login = async (e) => {
         e.preventDefault();
@@ -47,11 +48,18 @@ const Login = () => {
         });
     };
 
+    const passSee = (e) =>{
+        e.preventDefault();
+        setPass(!pass);
+        console.log(pass);
+    }
+
     return (
         <form className={cl.login} onSubmit={login}>
             <h3>Вход</h3>
             <input type="text" name="email" onChange={handleForm} placeholder="Email"/>
-            <input type="text" name="password" onChange={handleForm} placeholder="Пароль"/>
+            <input type={pass ? 'password' : 'text'} name="password" onChange={handleForm} placeholder="Пароль"/>
+            <a href="#" onClick={(e) => passSee(e)} style={{color: 'black', marginBottom: '20px'}}>Показать/скрыть пароль</a>
             <input type="submit" value="Войти"/>
         </form>
     );

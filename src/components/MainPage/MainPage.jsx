@@ -3,8 +3,8 @@ import Login from '../Login/Login';
 import Registration from '../Registration/Registration';
 import Modal from '../UI/modal/Modal';
 import NewButton from '../UI/NewButton/NewButton';
-import classes from './MainPage.module.css'
-import logo from '../../assets/logo.png'
+import classes from './MainPage.module.css';
+import logo from '../../assets/logo_white.svg';
 import Footer from '../UI/footer/Footer';
 
 const MainPage = () => {
@@ -12,6 +12,7 @@ const MainPage = () => {
 
     const [registrationModal, setRegistrationModal] = useState(false)
     const [loginModal, setLoginModal] = useState(false)
+
 
     return (
         <div className={classes.mainPage}>

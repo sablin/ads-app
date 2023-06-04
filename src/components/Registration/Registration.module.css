@@ -14,3 +14,19 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+.Registration input[type=submit]{
+    border: none;
+    padding: 10px 37px;
+    cursor: pointer;
+    font-size: 16px;
+    background: #0B8F00;
+    color: white;
+    transition: 0.3s all linear;
+    border-radius: 8px;
+    box-shadow: none;
+    margin: 18px auto 10px;
+}
+.passText{
+    color: #635e5e;
+    text-align: left;
+}

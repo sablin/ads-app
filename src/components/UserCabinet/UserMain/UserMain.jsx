@@ -9,15 +9,17 @@ import cl from './UserMain.module.css';
 import UserApi from "../../../api/user.api";
 import AdvertisementApi from "../../../api/advertisement.api";
 import TokenService from "../../../services/token.service";
+import noneFile from '../../../assets/none-banner.jpg'
 
 const UserMain = () => {
-    const {loginUser, setLoginUser, setToken, token} = useContext(AuthContext);
-    const [balance, setBalance] = useState(1);
+    const {loginUser, setLoginUser, setToken} = useContext(AuthContext);
     const [currentSlide, setCurrentSlide] = useState(0);
     const [hasSlides, setHasSlides] = useState(true);
     const [images, setImages] = useState([]);
     const {setIsAuth} = useContext(AuthContext);
     const [hiddenCarousel, setHiddenCarousel] = useState(true)
+    const [showInfo, setShowInfo] = useState(false);
+
 
     const logout = () => {
         localStorage.removeItem('auth');
@@ -35,6 +37,7 @@ const UserMain = () => {
     }, [currentSlide])
 
     const next = async () => {
+        setShowInfo(false);
         setHiddenCarousel(false)
         setCurrentSlide(pre => pre + 1);
 
@@ -42,20 +45,22 @@ const UserMain = () => {
         const res = await UserApi.userInfo()
         setLoginUser(res.data);
 
-        if (currentSlide + 2 >= images.length) {
-            console.log('dd');
+        if (currentSlide + 1 >= images.length) {
             setHasSlides(false);
         } else {
-            console.log(currentSlide + 2);
+           
         }
     };
+
+    const showMore = () =>{
+        setShowInfo(!showInfo);
+    }
 
     useEffect(() => {
         if (localStorage.getItem('auth')) {
             setToken(TokenService.getLocalAccessToken());
             UserApi.userInfo()
                 .then((res) => {
-                    console.log(res);
                     setLoginUser(res.data);
                     localStorage.setItem('loginUser', loginUser);
                     localStorage.setItem('auth', 'auth');
@@ -64,7 +69,6 @@ const UserMain = () => {
 
         AdvertisementApi.fetch()
             .then((res) => {
-                console.log(res);
                 if (res.data.length > 0) {
                     setImages(res.data);
                     setCurrentSlide(0);
@@ -85,9 +89,9 @@ const UserMain = () => {
 
             <div>
                 {!hasSlides ? (
-                    <div style={{color: 'black'}}>
-                        На сегодня рекламные объявления закончились! Зайдите чуть позже
-                    </div>
+                      <Fragment>
+                        <img src={noneFile} alt="На сегодня реклама закончилась"  className={cl.noneBanner}/>
+                    </Fragment>
                 ) : (
                     <Fragment>
                         <Carousel
@@ -105,12 +109,25 @@ const UserMain = () => {
                             }}
                             selectedItem={currentSlide}>
                             {images.map((image, index) => {
+                                const about = image.description.split('|');  
                                 return (
                                     <div key={image.image} className={cl.imageBox}
                                          style={{display: !index ? "block" : hiddenCarousel ? "none" : "block"}}>
                                         <img src={image.image} alt={image.image}/>
                                         <p className="legend" id={cl.customLegend}>
-                                            <a href={image.url} target="_blank"> {image.description}</a>
+                                            <button className={cl.moreButton} onClick={showMore}><i className="fa fa-info-circle" aria-hidden="true"></i> Подробнее</button>
+                                            {showInfo 
+                                            ?
+ <a href={image.url} target="_blank" className={cl.imageInfo} style={{textAlign: 'left', fontSize: '15px', fontWeight: 'bold'}}> 
+ {about[0]} <br/>
+ {about[1]} <br/>
+ {about[2]} 
+ </a> 
+ :
+ null
+                                            
+                                            }
+                                           
                                         </p>
                                     </div>
                                 );

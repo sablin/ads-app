@@ -15,10 +15,26 @@
     border-radius: 16px;
     min-width: 250px;
     color: black;
+    max-width: 400px;
+    text-align: center;
 }
 
 .Modal.active{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.Modal p{
+    font-size: 13px;
+}
+.Modal ul{
+    line-height: 15px;
+    text-align: left;
+    font-size: 13px;
+}
+.Modal h5 {
+    font-size: 16px;
+}
+.Modal h3{
+    font-size: 18px;
 }

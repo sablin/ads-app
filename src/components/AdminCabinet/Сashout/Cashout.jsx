@@ -23,7 +23,6 @@ const Cashout = () => {
         },
       })
       .then((res) => {
-        console.log(res.data);
         setPrizes(res.data);
       });
   }, []);

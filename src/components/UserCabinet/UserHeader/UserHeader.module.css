@@ -55,6 +55,23 @@
    }
 
    @media (max-width:900px) {
+  .topButtons a{
+        color: white;
+        margin: 3px 20px;
+        text-decoration: none;
+        border: 1px solid white;
+        padding: 4px 12px;
+       }
+       .userIcon{
+           display: none;;
+       }
+       .loginBlockMenu{
+        color: white;
+        padding: 0px 20px;
+       }
+       .loginBlockMenu p {
+        margin-bottom: 0px;
+       }
   
        .topMenu{
         display: flex;

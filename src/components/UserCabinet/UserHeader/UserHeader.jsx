@@ -1,7 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../context';
-import NewButton from '../../UI/NewButton/NewButton';
 import userIcon from '../../../assets/icon.png'
 
 
@@ -39,14 +38,16 @@ const UserHeader = (props) => {
                             <div className={cl.mobileMenu}>
                                 <button className={cl.mobileClose}  onClick={()=>setOpen(!open)}><i className="fa fa-times" aria-hidden="true"></i>
 </button>
-                            <Link to="/lk">Главная страница</Link>
-                        <Link to="/lk/gifts">Выбор призов</Link> 
-                        <Link to="/lk/mygifts">Мои призы</Link> 
-                            <hr />
+
                         <div className={cl.loginBlockMenu}> 
                      <p>{props.firstName} {props.middleName} {props.lastName}</p>
                      <p>{props.points} баллов</p>
                 </div>
+                <hr />
+                            <Link to="/lk">Главная страница</Link>
+                        <Link to="/lk/gifts">Выбор призов</Link> 
+                        <Link to="/lk/mygifts">Мои призы</Link> 
+                         
                             </div>
                         )
                         :
@@ -62,7 +63,7 @@ const UserHeader = (props) => {
                      <span>{props.points} баллов</span>
                 </div>
                 <div>
-                <img src={userIcon} alt="" />
+                <img src={userIcon} className={cl.userIcon} alt="" />
                 </div>
                
                 <Link to="/" onClick={logout}>Выход</Link>

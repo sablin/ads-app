@@ -19,16 +19,15 @@ const Gifts = () => {
     useEffect(() => {
         PrizeApi.fetch()
             .then((res) => {
-                console.log(res.data);
                 setPrizes(res.data);
             })
+            .catch((err) => {alert(err.response); alert(err); alert(err.message)});
     }, []);
 
     const getPrize = (id) => {
         const data = {
             prize: id,
         };
-        console.log(data);
         PrizeRequestApi.creatingRequestForGift(data)
             .then((res) => {
                 alert('Ваша заявка успешно создана. Ожидайте когда с вами свяжется администратор сервиса.');
@@ -45,20 +44,28 @@ const Gifts = () => {
                 points={loginUser.points_amount}
             />
             <div className={cl.prizeContainer}>
-                {prizes.map((el) => {
-                    return (
-                        <Gift
-                            but="Получить"
-                            getPrize={getPrize}
-                            id={el.id}
-                            name={el.title}
-                            key={el.name}
-                            discr={el.description}
-                            balance={el.cost}
-                            img={el.image}
-                        />
-                    );
-                })}
+                {
+                    prizes.length > 0 ?
+                    (
+                        prizes.map((el, id) => {
+                            return (
+                                <Gift
+                                    but="Получить"
+                                    getPrize={getPrize}
+                                    id={el.id}
+                                    name={el.title}
+                                    key={id}
+                                    discr={el.description}
+                                    balance={el.cost}
+                                    img={el.image}
+                                />
+                            );
+                        })
+                    )
+                    :
+                    <p>Идет загрузка призов...</p>
+
+                }
             </div>
             <Footer/>
         </div>

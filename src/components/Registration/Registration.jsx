@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import cl from './Registration.module.css';
 import UserApi from "../../api/user.api";
 
+import policy from "../../assets/data_policy.pdf"
+import { Link } from 'react-router-dom';
+
 const Registration = () => {
   const [user, setUser] = useState({
     email: '',
@@ -34,6 +37,7 @@ const Registration = () => {
       .then((res) => {
         setVisible(false);
         setSuccess(true);
+
       })
       .catch((res) => {
         setVisible(true);
@@ -55,7 +59,7 @@ const Registration = () => {
           alert('Введенный пароль слишком простой. Пароль должен содержать минимум 8 символов.');
         }
         if(errText=== 'This password is too common.'){
-          alert('Введенный пароль слишком простой.');
+          alert('Введенный пароль слишком простой. В пароле должна быть хотя бы 1 заглавная буква, цифра и он должен быть не короче 8 символов.');
         }
         
       });
@@ -66,7 +70,7 @@ const Registration = () => {
       <h3>Регистрация</h3>
 
       {success ? (
-        <p>Вы успешно зарегистрированы. Можете войти в сервис по указанным email и паролю.</p>
+        <p>Вы успешно зарегистрированы. Можете войти в сервис по указанным email и паролю. </p>
       ) : (
         <div>
           <input
@@ -78,31 +82,10 @@ const Registration = () => {
           />
           <input
             type="text"
-            name="middle_name"
-            onChange={handleForm}
-            placeholder="Введите вашу фамилию"
-            required
-          />
-          <input
-            type="text"
-            name="last_name"
-            onChange={handleForm}
-            placeholder="Введите ваше отчество"
-            required
-          />
-          <input
-            type="text"
             name="phone"
             onChange={handleForm}
             placeholder="Введите номер телефона"
             pattern="^\+?\d{1,2}\(?\d{3}\)?\d{3}-?\d{2}-?\d{2}$"
-            required
-          />
-          <input
-            type="text"
-            name="location"
-            onChange={handleForm}
-            placeholder="Введите ваш город"
             required
           />
           <input
@@ -119,7 +102,9 @@ const Registration = () => {
             placeholder="Придумайте пароль"
             required
           />
+          <p className={cl.passText}>Пароль должен содержать 8 символом, как минимум одну цифру и прописную букву </p>
           <input type="submit" value="Регистрация" />
+          <span>Регистрируясь в сервисе Вы принимаете правила <Link to={policy} target="_blank">политики обработки персональных данных</Link></span>
         </div>
       )}
       {visible ? <p>Проверьте введенные данные. В них присутствует ошибка</p> : false}
